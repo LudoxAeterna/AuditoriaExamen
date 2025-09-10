@@ -49,9 +49,9 @@ Protección por middleware para restringir acceso a `/dashboard`.
 **Riesgo:** Medio
 
 ## Anexo 1: Activos de información
-# Activo Tipo
-1 Servidor de base de datos Base de Datos
-2 API Transacciones Servicio Web
-3 Aplicación Web de Banca Aplicación
-4 Servidor de Correo Infraestructura
-5 Firewall Perimetral Seguridad
+
+1. Servidor de base de datos — Base de Datos  
+2. API Transacciones — Servicio Web  
+3. Aplicación Web de Banca — Aplicación  
+4. Servidor de Correo — Infraestructura  
+5. Firewall Perimetral — Seguridad
