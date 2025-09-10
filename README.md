@@ -7,14 +7,20 @@
 ## 1. Proyecto de Auditoría de Riesgos
 
 ### Login
-**Evidencia:** ![Login](./imgs/Login.PNG)  
+**Evidencia1:** ![Login](./imgs/Login.PNG)  
+**Evidencia2:** ![Codigo Login](./imgs/1Login.PNG)  
 **Descripción:** Se implementó un login ficticio sin BD (usuarios en memoria) con `express-session`.  
 Protección por middleware para restringir acceso a `/dashboard`.
 
 ### Motor de Inteligencia Artificial
-**Evidencia:** ![Código IA](./imgs/IA.PNG)  
+**Evidencia1:** ![Visualizar IA](./imgs/IA.PNG)  
+**Evidencia2:** ![Código IA](./imgs/IA2.PNG)  
 **Descripción:** Motor IA local basado en plantillas por activo que genera perfil, impacto, recomendaciones 
 (alineadas a ISO 27001) y nivel de riesgo. Resultado visible por POST `/riesgos/analizar`.
+
+### Dashboard
+**Evidencia:** ![Dashboard](./imgs/Dash.PNG)  
+**Descripción:** Dashboard funcional
 
 ## 2. Hallazgos
 
