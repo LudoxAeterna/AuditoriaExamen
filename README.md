@@ -1,127 +1,52 @@
-# Gestión de Riesgos para Activos Digitales
+# Informe de Auditoría de Sistemas - Examen de la Unidad I
 
-## Descripción del Proyecto
-Identificación y gestión automatizada de riesgos en activos digitales, que utiliza modelos de lenguaje avanzados ejecutados localmente. La herramienta proporciona:
+**Nombres y apellidos:**  
+**Fecha:**  
+**URL GitHub:** https://github.com/tuusuario/auditoria-examen
 
-- Generación automática de perfiles de riesgo
-- Análisis de impactos potenciales
-- Recomendaciones de mitigación alineadas con ISO 27001
-- Interfaz intuitiva para gestión de casos
+## 1. Proyecto de Auditoría de Riesgos
 
-## Tecnologías Implementadas
+### Login
+**Evidencia:** ![Login](./imgs/login_ok.png)  
+**Descripción:** Se implementó un login ficticio sin BD (usuarios en memoria) con `express-session`.  
+Protección por middleware para restringir acceso a `/dashboard`.
 
-### Frontend
-- **React 18** con **Vite** (entorno de desarrollo rápido)
-- **Ant Design** (biblioteca de componentes UI profesional)
-- **Axios** (para comunicación con el backend)
+### Motor de Inteligencia Artificial
+**Evidencia:** ![Código IA](./imgs/ia_engine.png)  
+**Descripción:** Motor IA local basado en plantillas por activo que genera perfil, impacto, recomendaciones 
+(alineadas a ISO 27001) y nivel de riesgo. Resultado visible por POST `/riesgos/analizar`.
 
-### Backend
-- **Flask** (servidor web ligero en Python)
-- **Ollama** (infraestructura local para modelos LLM)
-- **LangChain** (orquestación de prompts avanzados)
-- **LLAMA** (modelo de lenguaje para recomendaciones)
+## 2. Hallazgos
 
-## Requisitos del Sistema
+### Activo 1: Servidor de base de datos
+**Evidencia:** ![A1](./imgs/a1_db.png)  
+**Condición:** Posible falta de cifrado en reposo y controles granulares.  
+**Recomendación:** Cifrado en reposo, RBAC, auditoría de logs, backups cifrados.  
+**Riesgo:** Alto
 
-### Dependencias principales
-- Visual Studio Code https://code.visualstudio.com
-- Node.js v18+ (para el frontend) https://nodejs.org/en/download
-- Python 3.9+ (para el backend o la versión más reciente) https://www.python.org/downloads/
-- Ollama instalado localmente https://ollama.com
-- Git (para clonar el repositorio) https://git-scm.com/downloads
+### Activo 2: API Transacciones
+**Evidencia:** ![A2](./imgs/a2_api.png)  
+**Condición:** Autenticación insuficiente y sin rate limiting.  
+**Recomendación:** OAuth2/JWT, rate limiting, validación estricta, monitoreo.  
+**Riesgo:** Alto
 
-## Instalación y Configuración
+### Activo 3: Aplicación Web de Banca
+**Evidencia:** ![A3](./imgs/a3_web.png)  
+**Condición:** No se fuerza HSTS/HTTPS, pruebas de seguridad insuficientes.  
+**Recomendación:** HSTS/TLS1.2+, CSP, cookies seguras, pentesting.  
+**Riesgo:** Alto
 
-### 1. Clonar el repositorio
-```bash
-git clone https://github.com/OscarJimenezFlores/CursoAuditoria/tree/main/AuditoriaRiesgos
-cd AuditoriaRiesgos
-```
+### Activo 4: Servidor de Correo
+**Evidencia:** ![A4](./imgs/a4_mail.png)  
+**Condición:** Parcheo atrasado, SPF/DKIM/DMARC incompletos.  
+**Recomendación:** Parches, SPF/DKIM/DMARC, MFA admins, monitoreo.  
+**Riesgo:** Medio
 
-### 2. Configuración del FRONTEND
-```bash
-cd frontend
-npm install
-npm run dev
-```
-El FRONT estará disponible en: http://localhost:5173
+### Activo 5: Firewall Perimetral
+**Evidencia:** ![A5](./imgs/a5_fw.png)  
+**Condición:** Reglas permisivas y puertos innecesarios abiertos.  
+**Recomendación:** Mínimo privilegio, cerrar puertos, hardening, alertas de cambios.  
+**Riesgo:** Medio
 
-### 3. Configuración del Backend
-
-#### Para usuarios macOS
-```bash
-brew install ollama
-ollama pull llama2:7b
-ollama run llama2:7b
-```
-
-#### Para usuarios Windows
-
-1. Descargar el instalador desde ollama.com (https://ollama.com)  
-2. O puede ejecutar en la terminal de VsCode / PowerShell:
-
-```bash
-ollama pull llama2:7b
-ollama run llama2:7b
-```
-
-   Opcionalmente, puede verificar el estado del servicio:
-```bash
-tasklist | findstr ollama
-```
-
-### 4. Iniciar el BACKEND servidor Flask
-
-```bash
-python app.py
-```
-Nota: Si encuentras problemas con la versión de Python, prueba con el numero de versión Python que instalaste, por ejemplo:
-```bash
-python3.9 app.py
-```
-
-## Solución de Problemas Comunes
-
-#### Errores de dependencias
-
-Ejecuta:
-```bash
-npm ci --force  # Para frontend
-pip install --upgrade -r requirements.txt  # Para backend
-```
-
-#### Problemas de compatibilidad
-
-Asegúrate de tener instalado
-- Node.js v18+
-- Python 3.9+
-- Ollama versión estable más reciente
-
-#### Terminar Procesos en MAC terminal
-```bash
-# Para frontend (React)
-pkill -f "npm run dev"
-
-# Para backend (Flask)
-pkill -f "python app.py"
-
-# Para Ollama
-pkill -f "ollama"
-```
-
-#### Terminar Procesos en Windows (VSCode/PowerShell)
-```bash
-# Para frontend
-taskkill /F /IM node.exe
-
-# Para backend
-taskkill /F /IM python.exe
-
-# Para Ollama
-taskkill /F /IM ollama.exe
-```
-
-
-# AuditoriaExamen
-# AuditoriaExamen
-# AuditoriaExamen
+## Anexo 1: Activos de información
+(Agrega la lista del Anexo 1 del enunciado para referencia)
