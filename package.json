@@ -2,7 +2,6 @@
   "name": "risk-management-helper",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,6 +11,9 @@
   "dependencies": {
     "antd": "^5.17.4",
     "axios": "^1.7.2",
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -24,5 +26,18 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "vite": "^5.2.0"
-  }
+  },
+  "description": "Identificación y gestión automatizada de riesgos en activos digitales, que utiliza modelos de lenguaje avanzados ejecutados localmente. La herramienta proporciona:",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LudoxAeterna/AuditoriaExamen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LudoxAeterna/AuditoriaExamen/issues"
+  },
+  "homepage": "https://github.com/LudoxAeterna/AuditoriaExamen#readme"
 }

@@ -1,0 +1,46 @@
+<!-- /views/dashboard.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard Auditoría</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    .box { border:1px solid #ddd; padding:16px; border-radius:8px; }
+    label { display:block; margin:12px 0 6px }
+    select, button { padding:8px; }
+    pre { background:#f7f7f7; padding:12px; border-radius:6px; }
+    .top { display:flex; gap:12px; align-items:center; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <h2>Proyecto de Auditoría de Riesgos</h2>
+    <a href="/logout">Cerrar sesión</a>
+  </div>
+
+  <div class="box">
+    <h3>Evaluar Activo (IA)</h3>
+    <form method="POST" action="/riesgos/analizar">
+      <label for="activo">Selecciona Activo (Anexo 1):</label>
+      <select id="activo" name="activo" required>
+        <option value="Servidor de base de datos">Servidor de base de datos</option>
+        <option value="API Transacciones">API Transacciones</option>
+        <option value="Aplicación Web de Banca">Aplicación Web de Banca</option>
+        <option value="Servidor de Correo">Servidor de Correo</option>
+        <option value="Firewall Perimetral">Firewall Perimetral</option>
+        <!-- Puedes agregar más del Anexo 1 -->
+      </select>
+      <button type="submit">Analizar</button>
+    </form>
+  </div>
+
+  <div class="box">
+    <h3>Resultado IA</h3>
+    <div id="resultado">
+      <!-- Tip: genera evidencias: pega aquí el resultado que te devuelva el POST -->
+      <p>Usa este módulo para generar perfiles de riesgo, impacto y recomendaciones alineadas con ISO 27001.</p>
+    </div>
+  </div>
+</body>
+</html>
